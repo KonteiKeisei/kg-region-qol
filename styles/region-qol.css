@@ -1,0 +1,130 @@
+/* ---------- Status bar above the canvas ---------- */
+#kg-rqol-bar {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: min(720px, calc(100vw - 32px));
+  padding: 6px 8px 6px 12px;
+  border-radius: 8px;
+  background: rgba(15, 15, 20, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  color: #f0f0f0;
+  font-size: 14px;
+  pointer-events: auto;
+}
+#kg-rqol-bar[hidden] { display: none; }
+#kg-rqol-bar .rqol-msg {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#kg-rqol-bar .rqol-msg a {
+  font-weight: 700;
+  text-decoration: underline dotted;
+  cursor: pointer;
+  color: inherit;
+}
+#kg-rqol-bar .rqol-new { color: #ffd479; }
+#kg-rqol-bar .rqol-swatch,
+.kg-rqol-manager .rqol-swatch {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+#kg-rqol-bar button {
+  flex: none;
+  width: auto;
+  height: 26px;
+  line-height: 24px;
+  padding: 0 10px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+#kg-rqol-bar .rqol-armed {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  color: #9fd6ff;
+  white-space: nowrap;
+}
+#kg-rqol-bar .rqol-armed button { height: 22px; line-height: 20px; padding: 0 6px; }
+body.kg-rqol-placing #board { cursor: copy; }
+
+/* ---------- Preset manager ---------- */
+.kg-rqol-manager .window-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.kg-rqol-manager .rqol-toolbar { display: flex; gap: 6px; flex-wrap: wrap; }
+.kg-rqol-manager .rqol-toolbar button { flex: 1 1 auto; white-space: nowrap; }
+.kg-rqol-manager .rqol-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.kg-rqol-manager .rqol-empty { padding: 24px 8px; text-align: center; opacity: 0.8; }
+.kg-rqol-manager .rqol-preset {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border, rgba(127, 127, 127, 0.4));
+  background: rgba(127, 127, 127, 0.08);
+}
+.kg-rqol-manager .rqol-preset[hidden] { display: none; }
+.kg-rqol-manager .rqol-head { display: flex; align-items: center; gap: 8px; }
+.kg-rqol-manager .rqol-name { font-weight: 700; font-size: 15px; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.kg-rqol-manager .rqol-desc { margin: 4px 0 0; opacity: 0.85; font-size: 13px; }
+.kg-rqol-manager .rqol-badge {
+  flex: none;
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background: rgba(127, 127, 127, 0.25);
+  white-space: nowrap;
+}
+.kg-rqol-manager .rqol-badge.warn { background: #b8860b; color: #fff; }
+.kg-rqol-manager .rqol-badge.on { background: #2f6fb0; color: #fff; }
+.kg-rqol-manager .rqol-chips { display: flex; flex-wrap: wrap; gap: 4px; margin: 6px 0; }
+.kg-rqol-manager .rqol-chip {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(127, 127, 127, 0.45);
+  white-space: nowrap;
+}
+.kg-rqol-manager .rqol-chip.disabled { opacity: 0.55; text-decoration: line-through; }
+.kg-rqol-manager .rqol-chip.missing {
+  border-color: #d29a00;
+  background: rgba(210, 154, 0, 0.18);
+  cursor: help;
+}
+.kg-rqol-manager .rqol-chip.missing i { color: #e0a800; }
+.kg-rqol-manager .rqol-chip.broken { border-style: dashed; cursor: help; }
+.kg-rqol-manager .rqol-none { font-size: 12px; opacity: 0.7; }
+.kg-rqol-manager .rqol-actions { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+.kg-rqol-manager .rqol-actions button { flex: none; width: auto; font-size: 12px; padding: 0 8px; white-space: nowrap; }
+.kg-rqol-manager .rqol-actions button.icon { width: 28px; padding: 0; }
+.kg-rqol-manager .rqol-spacer { flex: 1; }
+
+/* ---------- Dialog forms ---------- */
+.kg-rqol-form { display: flex; flex-direction: column; gap: 8px; }
+.kg-rqol-form fieldset { display: flex; flex-direction: column; gap: 4px; }
+.kg-rqol-form .rqol-check { display: flex; align-items: flex-start; gap: 6px; }
+.kg-rqol-form .rqol-check input { flex: none; margin-top: 2px; }
+.kg-rqol-form .hint { display: block; font-size: 12px; opacity: 0.75; }
+.kg-rqol-form .rqol-geometry { padding: 6px; border-radius: 4px; background: rgba(127, 127, 127, 0.1); }

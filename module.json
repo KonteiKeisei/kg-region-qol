@@ -1,0 +1,30 @@
+{
+  "id": "kg-region-qol",
+  "title": "KG Region QOL",
+  "description": "Region editing that stays on the region you picked, region copy and paste between scenes, and region presets you can save, reuse on any scene, and export or import as files. Presets that use behaviors from modules you don't have still import, with a warning that names the missing module.",
+  "version": "0.1.0",
+  "license": "LICENSE",
+  "readme": "https://github.com/KonteiKeisei/kg-region-qol#readme",
+  "url": "https://github.com/KonteiKeisei/kg-region-qol",
+  "bugs": "https://github.com/KonteiKeisei/kg-region-qol/issues",
+  "changelog": "https://github.com/KonteiKeisei/kg-region-qol/blob/main/CHANGELOG.md",
+  "manifest": "https://github.com/KonteiKeisei/kg-region-qol/releases/latest/download/module.json",
+  "download": "https://github.com/KonteiKeisei/kg-region-qol/releases/download/v0.1.0/kg-region-qol-0.1.0.zip",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14",
+    "maximum": "14"
+  },
+  "authors": [
+    {
+      "name": "Konte"
+    }
+  ],
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "styles": [
+    "styles/region-qol.css"
+  ],
+  "languages": []
+}
